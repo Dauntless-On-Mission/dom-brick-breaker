@@ -4,10 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DOM Brick Breaker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/index.css" />
+    <title>DOM Brick Breaker</title>
   </head>
   <body>
+    <div class="overlay">
+      <div class="bottom">
+        <div>
+          <span>Score: </span>
+          <span id="score"></span>
+        </div>
+        <div>
+          <span>Level: </span>
+          <span id="level"></span>
+        </div>
+        <div>
+          <span>Life: </span>
+          <span id="life"></span>
+        </div>
+      </div>
+    </div>
     <canvas id="canvas"></canvas>
     <script type="module" src="./scripts/index.js"></script>
   </body>

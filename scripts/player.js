@@ -5,10 +5,11 @@ export default class Player {
     this.width = width;
     this.height = height;
     this.color = "green";
-    this.speed = 5;
+    this.speed = 7;
     this.isLeft = false;
     this.isRight = false;
     this.life = 3;
+    this.score = 0;
     this.isWon = false;
   }
   draw(ctx) {

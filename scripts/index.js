@@ -3,15 +3,22 @@ import Brick from "./brick.js";
 import Player from "./player.js";
 import Ball from "./ball.js";
 
+const score = document.getElementById("score");
+score.innerText = "0";
+const life = document.getElementById("life");
+life.innerText = "3";
+const level = document.getElementById("level");
+level.innerText = "1";
+
 const canvas = new Canvas(document.getElementById("canvas"));
 window.addEventListener("resize", canvas.setWidthHeight);
 
 const BRICK_AMOUNT = 50;
 const COL = 10;
 const ROW = 5;
-const COL_WIDTH = canvas.width / 10;
+const COL_WIDTH = canvas.width / COL;
 const COL_HEIGHT = 40;
-const PADDING = 10;
+const PADDING = 15;
 
 const BricksArr = [];
 let BRICKS_LEFT = 50;
@@ -28,7 +35,7 @@ console.log(BricksArr);
 
 const player = new Player(
   canvas.width / 2 - COL_WIDTH / 2,
-  canvas.height - 2 * COL_HEIGHT,
+  canvas.height - 3 * COL_HEIGHT,
   (3 * COL_WIDTH) / 2,
   (2 * COL_HEIGHT) / 3
 );
@@ -53,6 +60,7 @@ function drawBricks() {
       brick.isVisible = false;
       player.score += 10;
       BRICKS_LEFT -= 1;
+      score.innerText = player.score;
       ball.yVelocity *= -1;
     } else if (brick.isVisible) {
       brick.draw(canvas.ctx);
@@ -72,11 +80,12 @@ function updateGame() {
 }
 
 function clearGame() {
-  canvas.ctx.fillStyle = "rgba(255, 255, 255, .3)";
+  canvas.ctx.fillStyle = "rgba(255, 255, 255, 0.3)";
   canvas.ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
 (function animateGame() {
+  life.innerText = player.life;
   if (player.life <= 0) {
     console.log("Game Over!");
     return;

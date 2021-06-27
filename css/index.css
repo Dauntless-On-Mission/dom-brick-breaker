@@ -6,10 +6,20 @@
 
 body {
   background-color: #eee;
+  display: flex;
+  justify-content: center;
+  font-family: 'Akaya Kanadaka', cursive;
 }
 
-#canvas {
+.bottom {
+  display: flex;
+  justify-content: space-between;
   position: absolute;
-  left: 0;
-  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  padding: 1rem;
+  font-size: 2rem;
+  background-color: rgba(255, 255, 255, 0.5);
 }

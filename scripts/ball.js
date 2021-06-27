@@ -4,7 +4,7 @@ export default class Ball {
     this.y = y;
     this.radius = radius;
     this.color = "red";
-    this.speed = 2;
+    this.speed = 3;
     this.xVelocity = Math.random() >= 0.5 ? this.speed : -this.speed;
     this.yVelocity = Math.random() >= 0.5 ? this.speed : -this.speed;
   }
