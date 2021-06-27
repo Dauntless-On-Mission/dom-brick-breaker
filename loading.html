@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="loading.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body onload="move()">
+    <div class="container">
+      <div class="logo">
+        <div class="logo-text">
+          <div class="main-logo"><h1>domtouch</h1></div>
+          <div class="sub-logo">
+            <h3><span style="color: red">HTML5</span> GAMES</h3>
+          </div>
+        </div>
+        <progress id="progress" max="100" value="10"></progress>
+      </div>
+    </div>
+    <script>
+      function move() {
+        var elem = document.getElementById("progress");
+        var width = elem.value;
+        var id = setInterval(frame, 14);
+        function frame() {
+          if (width >= 100) {
+            clearInterval(id);
+          } else {
+            width++;
+            elem.value = width;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
