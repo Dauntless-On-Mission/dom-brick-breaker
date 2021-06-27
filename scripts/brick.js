@@ -5,7 +5,7 @@ export default class Brick {
     this.width = width;
     this.height = height;
     this.color = "orange";
-    this.visible = true;
+    this.isVisible = true;
   }
   draw(ctx) {
     ctx.beginPath();
