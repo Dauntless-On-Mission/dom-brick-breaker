@@ -158,4 +158,36 @@ function getGame(l) {
   });
 }
 
-getGame(levels[CURRENT_LEVEL]);
+document.querySelector(".playBut").addEventListener('click', removeHome);
+window.addEventListener('load', move);
+// window.onload = move;
+
+function removeHome() {
+  var obj = document.getElementsByClassName("home-screen");
+  obj[0].style.display = "none";
+  var obj = document.getElementsByClassName("bottom");
+  obj[0].style.display = "flex";
+  getGame(levels[CURRENT_LEVEL]);
+}
+
+function showHome() {
+  var obj = document.getElementsByClassName("loading");
+  obj[0].style.display = "none";
+  var obj = document.getElementsByClassName("home-screen");
+  obj[0].style.display = "flex";
+}
+
+function move() {
+  var elem = document.getElementById("progress");
+  var width = elem.value;
+  var id = setInterval(frame, 18);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++;
+      elem.value = width;
+    }
+  }
+  setTimeout(showHome, 2100);
+}

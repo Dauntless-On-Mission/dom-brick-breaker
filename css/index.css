@@ -12,7 +12,8 @@ body {
 }
 
 .bottom {
-  display: flex;
+  /* display: flex; */
+  display: none;
   justify-content: space-between;
   position: absolute;
   bottom: 0;
@@ -30,8 +31,19 @@ body {
   left: 0;
   width:100%;
   height: 100vh;
-  background: url(/dom-brick-breaker/assets/gif.gif) no-repeat;
+  background: url("/assets/HomeBackground.gif") no-repeat;
   background-size: cover;
+  display: none;
+  /* display: flex; */
+  justify-content: center;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100vh;
   /* display: none; */
   display: flex;
   justify-content: center;
