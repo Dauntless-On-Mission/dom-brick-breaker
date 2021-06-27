@@ -1,67 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap" rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./css/index.css" />
-    <title>DOM Brick Breaker</title>
-  </head>
-  <body>
-    <div class="overlay">
-      <div class="bottom">
-        <div>
-          <span>Score: </span>
-          <span id="score"></span>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" href="./css/loading.css" />
+
+  <title>DOM Brick Breaker</title>
+</head>
+
+<body>
+
+  <div class="loading">
+    <div class="container-loading">
+      <div class="logo">
+        <div class="logo-text">
+          <div class="main-logo">
+            <h1>DomTeam</h1>
+          </div>
+          <div class="sub-logo">
+            <h3><span style="color: red">BRICK</span> GAME</h3>
+          </div>
         </div>
-        <div>
-          <span>Level: </span>
-          <span id="level"></span>
-        </div>
-        <div>
-          <span>Life: </span>
-          <span id="life"></span>
-        </div>
+        <progress id="progress" max="100" value="10"></progress>
       </div>
     </div>
-    <canvas id="canvas"></canvas>
+  </div>
 
-    <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-    <main class="home-screen">
-      <div class="board">
-        <img id="gameName" height="450" width="450" src="/dom-brick-breaker/assets/Picture1.png"></img>
-        <div class="ball"></div>
-        <input type="text" name="name" id="yourName" disabled="true">
-
-        <div class='container'>
-          <a href='#'class='playBut'>
-            
-        <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In  -->
-        <svg version="1.1"
-           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-           x="0px" y="0px" width="103.7px" height="103.7px" viewBox="0 0 213.7 213.7" enable-background="new 0 0 213.7 213.7"
-           xml:space="preserve">
-        
-        <polygon class='triangle' id="XMLID_18_" fill="none" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
-          73.5,62.5 148.5,105.8 73.5,149.1 "/>
-          
-        <circle class='circle' id="XMLID_17_" fill="none"  stroke-width="14" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="106.8" cy="106.8" r="100.3"/>
-        </svg>
-        
-        
-            
-          </a>
-        </div>
-        <!-- <label for="yourName">enter your name</label> -->
-        <!-- <label for="name">enter your name</label> -->
+  <div class="overlay">
+    <div class="bottom">
+      <div>
+        <span>Score: </span>
+        <span id="score"></span>
       </div>
-    </main>
-    <script type="module" src="./scripts/index.js"></script>
-  </body>
+      <div>
+        <span>Level: </span>
+        <span id="level"></span>
+      </div>
+      <div>
+        <span>Life: </span>
+        <span id="life"></span>
+      </div>
+    </div>
+  </div>
+  <canvas id="canvas"></canvas>
+
+  <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+  <main class="home-screen">
+    <div class="board">
+      <img id="gameName" height="450" width="450" src="./assets/title.png"></img>
+      <div class="ball"></div>
+      <input type="text" name="name" id="yourName" disabled="true">
+
+      <div class='container'>
+        <div class='playBut'>
+
+          <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In  -->
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="103.7px" height="103.7px"
+            viewBox="0 0 213.7 213.7" enable-background="new 0 0 213.7 213.7" xml:space="preserve">
+
+            <polygon class='triangle' id="XMLID_18_" fill="none" stroke-width="15" stroke-linecap="round"
+              stroke-linejoin="round" stroke-miterlimit="10" points="
+          73.5,62.5 148.5,105.8 73.5,149.1 " />
+
+            <circle class='circle' id="XMLID_17_" fill="none" stroke-width="14" stroke-linecap="round"
+              stroke-linejoin="round" stroke-miterlimit="10" cx="106.8" cy="106.8" r="100.3" />
+          </svg>
+
+        </div>
+      </div>
+      <!-- <label for="yourName">enter your name</label> -->
+      <!-- <label for="name">enter your name</label> -->
+    </div>
+  </main>
+
+  <script type="module" src="./scripts/index.js"></script>
+</body>
+
 </html>
