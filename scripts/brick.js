@@ -1,11 +1,11 @@
 export default class Brick {
-  constructor(x, y, width, height) {
+  constructor(x, y, width, height, isVisible) {
     this.x = x;
     this.y = y;
     this.width = width;
     this.height = height;
     this.color = "orange";
-    this.isVisible = true;
+    this.isVisible = isVisible;
   }
   draw(ctx) {
     ctx.beginPath();
