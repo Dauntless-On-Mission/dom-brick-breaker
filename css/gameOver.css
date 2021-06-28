@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+*{
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+
+}
+
+body{
+    height: 100vh;
+    width: auto;
+    background-image:url(Images\ and\ GIfs/gif.gif);
+    background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   overflow: hidden;
+    
+}
+
+
+.container {
+    position: relative;
+    height: 100vh;
+    width: 600px;
+    margin: auto;
+    /* border: 1px solid black; */
+}
+
+.box {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    height: 450px;
+    width: 400px;
+    border: 1px solid black;
+    background-color: rgb(134, 60, 60);
+    border-radius: 50px;
+    border:none;
+}
+
+h2 {
+    font-size: 55px;
+    color: white;
+    position: absolute;
+    top:160px;
+    left: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#skull {
+    position: absolute;
+    top: 90px;
+    left: 220px;
+    height:150px;
+    width: 150px;
+    z-index: 111;
+}
+
+.downbox {
+    position: absolute;
+    height: 55px;
+    display: flex;
+    top:400px;
+    left: 100px;
+    z-index: 1;
+
+}
+
+#menu, #restart, #next {
+    margin-left: 60px;
+    cursor: pointer;
+}
+
+h2::before,
+h2::after {
+  content: '';
+  top: 0;
+  bottom:0;
+  left:0;
+  right: 0;
+  position: absolute;
+}
+
+h2::before {
+  background: rgb(134, 60, 60);
+  animation: type 3s steps(20) forwards;
+}
+
+h2::after {
+  width: 1px;
+  background: rgb(134, 60, 60);
+  animation: 
+    type 3s steps(20) forwards;
+}
+
+@keyframes type {
+  to {
+    left: 100%;
+  }
+}
+
