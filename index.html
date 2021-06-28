@@ -57,7 +57,6 @@
 
   <main class="home-screen">
     <div class="board">
-      <img id="volume" height="70" width="70" src="/assets/sound.png" alt="" srcset="">
       <img id="gameName" height="450" width="450" src="./assets/title.png"></img>
       <div class="ball"></div>
       <input type="text" name="name" id="yourName" disabled="true">
@@ -87,7 +86,6 @@
 
   <div class="container-level">
     <!-- <img src="./assets/sound.png" alt="sound" id="sound"> -->
-    <img alt="sound" id="sound" class="volume">
     <!-- <img src="./assets/mute.png" alt="mute" id="mute"> -->
 
     <div class="levels">
@@ -108,6 +106,16 @@
       <img src="./assets/right.png" alt="right" id="right">
     </div>
   </div>
+
+  <img alt="sound" id="sound" class="volume">
+
+   <!--
+    Corona by Alexander Nakarada | https://www.serpentsoundstudios.com
+    Music promoted by https://www.chosic.com/
+    Attribution 4.0 International (CC BY 4.0)
+    https://creativecommons.org/licenses/by/4.0/
+  -->
+  <audio src="./assets/sounds/bg-sound.mp3" autoplay loop id="bg-sound"></audio>
 
   <script
   type="text/javascript"

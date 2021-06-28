@@ -14,6 +14,8 @@ level.innerText = "1";
 const canvas = new Canvas(document.getElementById("canvas"));
 window.addEventListener("resize", canvas.setWidthHeight);
 
+const soundEl = document.getElementById("bg-sound");
+
 let CURRENT_LEVEL = 0;
 
 const levelsBrickStructure = [
@@ -24,7 +26,7 @@ const levelsBrickStructure = [
     [false, true, false, true, false],
     [true, false, true, false, true],
     [false, true, false, true, false],
-    [true, false, true, false, true],
+    [true, false, true, false, true]
   ],
   [
     [true, true, true, true, true],
@@ -33,7 +35,7 @@ const levelsBrickStructure = [
     [true, false, true, false, true],
     [true, false, true, false, true],
     [true, false, true, false, true],
-    [true, true, true, true, true],
+    [true, true, true, true, true]
   ],
   [
     [true, true, true, true],
@@ -42,7 +44,7 @@ const levelsBrickStructure = [
     [true, false, false, false],
     [true, true, false, false],
     [true, true, true, false],
-    [true, true, true, true],
+    [true, true, true, true]
   ],
   [
     [false, false, false, true, false, false, false],
@@ -51,7 +53,7 @@ const levelsBrickStructure = [
     [true, true, true, true, true, true, true],
     [false, true, true, true, true, true, false],
     [false, false, true, true, true, false, false],
-    [false, false, false, true, false, false, false],
+    [false, false, false, true, false, false, false]
   ],
   [
     [true, false, false, false, false, false, false, true, false, true],
@@ -60,8 +62,8 @@ const levelsBrickStructure = [
     [true, true, true, true, true, true, true, true, false, true],
     [true, true, true, false, false, true, true, true, false, true],
     [true, true, false, false, false, false, true, true, false, true],
-    [true, false, false, false, false, false, false, true, false, true],
-  ],
+    [true, false, false, false, false, false, false, true, false, true]
+  ]
 ];
 const levels = [];
 
@@ -203,9 +205,8 @@ function getGame(l) {
 
 let volume = 1;
 
-
 document.querySelector(".playBut").addEventListener("click", removeHome);
-document.querySelector(".volume").addEventListener('click', muteSound);
+document.querySelector(".volume").addEventListener("click", muteSound);
 document.querySelector("#left").addEventListener("click", showHome);
 document.querySelector("#right").addEventListener("click", startGame);
 document.querySelector("#one").addEventListener("click", () => startLevel(0));
@@ -292,11 +293,12 @@ function startLevel(level) {
 function muteSound() {
   console.log(volume);
   var obj = document.getElementsByClassName("volume");
-  if(volume%2!=0){
+  if (volume % 2 != 0) {
     obj[0].id = "mute";
-  }
-  else{
+    soundEl.pause();
+  } else {
     obj[0].id = "sound";
+    soundEl.play();
   }
   volume++;
 }
