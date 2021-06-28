@@ -201,15 +201,19 @@ function getGame(l) {
   };
 }
 
+let volume = 1;
+
+
 document.querySelector(".playBut").addEventListener("click", removeHome);
+document.querySelector(".volume").addEventListener('click', muteSound);
 document.querySelector("#left").addEventListener("click", showHome);
 document.querySelector("#right").addEventListener("click", startGame);
-document.querySelector("#one").addEventListener("click", startFirstLevel);
-document.querySelector("#two").addEventListener("click", startSecondLevel);
-document.querySelector("#three").addEventListener("click", startThirdLevel);
-document.querySelector("#four").addEventListener("click", startFourthLevel);
-document.querySelector("#five").addEventListener("click", startFifthLevel);
-document.querySelector("#six").addEventListener("click", startSixthLevel);
+document.querySelector("#one").addEventListener("click", () => startLevel(0));
+document.querySelector("#two").addEventListener("click", () => startLevel(1));
+document.querySelector("#three").addEventListener("click", () => startLevel(2));
+document.querySelector("#four").addEventListener("click", () => startLevel(3));
+document.querySelector("#five").addEventListener("click", () => startLevel(4));
+document.querySelector("#six").addEventListener("click", () => startLevel(5));
 window.addEventListener("load", move);
 // window.onload = move;
 
@@ -278,39 +282,21 @@ function startGame() {
   getGame(levels[CURRENT_LEVEL]);
 }
 
-function startFirstLevel() {
-  CURRENT_LEVEL = 0;
+function startLevel(level) {
+  CURRENT_LEVEL = level;
   allNone();
   showGameCard();
   getGame(levels[CURRENT_LEVEL]);
 }
-function startSecondLevel() {
-  CURRENT_LEVEL = 1;
-  allNone();
-  showGameCard();
-  getGame(levels[CURRENT_LEVEL]);
-}
-function startThirdLevel() {
-  CURRENT_LEVEL = 2;
-  allNone();
-  showGameCard();
-  getGame(levels[CURRENT_LEVEL]);
-}
-function startFourthLevel() {
-  CURRENT_LEVEL = 3;
-  allNone();
-  showGameCard();
-  getGame(levels[CURRENT_LEVEL]);
-}
-function startFifthLevel() {
-  CURRENT_LEVEL = 4;
-  allNone();
-  showGameCard();
-  getGame(levels[CURRENT_LEVEL]);
-}
-function startSixthLevel() {
-  CURRENT_LEVEL = 5;
-  allNone();
-  showGameCard();
-  getGame(levels[CURRENT_LEVEL]);
+
+function muteSound() {
+  console.log(volume);
+  var obj = document.getElementsByClassName("volume");
+  if(volume%2!=0){
+    obj[0].id = "mute";
+  }
+  else{
+    obj[0].id = "sound";
+  }
+  volume++;
 }

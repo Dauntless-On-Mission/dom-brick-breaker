@@ -28,6 +28,14 @@ body {
   position: absolute;
   top: 1rem;
   left: 1rem;
+  content: url("/assets/sound.png");
+}
+
+#mute {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  content: url("/assets/mute.png");
 }
 
 .levels {
@@ -44,7 +52,8 @@ body {
 #six,
 #left,
 #right,
-#sound {
+#sound,
+#mute {
   height: 125px;
   width: 125px;
   padding: 15px;
@@ -52,7 +61,8 @@ body {
   cursor: pointer;
 }
 
-#sound {
+#sound,
+#mute {
   height: 100px;
   width: 100px;
 }
