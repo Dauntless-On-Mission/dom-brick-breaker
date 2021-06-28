@@ -6,18 +6,19 @@
 body {
   height: 100vh;
   width: 100%;
-  background-image: url(../assets/HomeBackground.gif);
+  background-image: url(/assets/HomeBackground.gif);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.container {
-  position: relative;
+.container-level {
+  position: fixed;
   height: 100vh;
   width: 600px;
   margin: auto;
-  display: flex;
+  /* display: flex; */
+  display: none;
   justify-content: center;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.623);

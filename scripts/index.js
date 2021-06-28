@@ -14,7 +14,7 @@ level.innerText = "1";
 const canvas = new Canvas(document.getElementById("canvas"));
 window.addEventListener("resize", canvas.setWidthHeight);
 
-let CURRENT_LEVEL = 1;
+let CURRENT_LEVEL = 0;
 
 const levelsBrickStructure = [
   [
@@ -43,11 +43,12 @@ levelsBrickStructure.forEach(structure => {
 });
 
 function getGame(l) {
+  // console.log(CURRENT_LEVEL);
   score.innerText = "0";
-  level.innerText = CURRENT_LEVEL;
+  level.innerText = CURRENT_LEVEL+1;
   life.innerText = "3";
   /* LEVEL */
-  console.log(l);
+  // console.log(l);
   const COL = l.COL;
   const ROW = l.ROW;
   const COL_WIDTH = canvas.width / COL;
@@ -67,7 +68,7 @@ function getGame(l) {
       }
     }
   }
-  console.log(BricksArr);
+  // console.log(BricksArr);
 
   /* PLAYER */
   const player = new Player(
@@ -76,11 +77,11 @@ function getGame(l) {
     (3 * COL_WIDTH) / 2,
     (2 * COL_HEIGHT) / 3
   );
-  console.log(player);
+  // console.log(player);
 
   /* BALL */
   const ball = new Ball(canvas.width / 2, canvas.height / 2, 10);
-  console.log(ball);
+  // console.log(ball);
   function isBallCollideWithBrick(ball, brick) {
     return (
       ball.x + ball.radius > brick.x &&
@@ -126,12 +127,12 @@ function getGame(l) {
   (function animateGame() {
     life.innerText = player.life;
     if (player.life <= 0) {
-      console.log("Game Over!");
+      // console.log("Game Over!");
       return;
     } else if (player.isWon) {
-      console.log("Player Won!");
+      // console.log("Player Won!");
       CURRENT_LEVEL += 1;
-      if (CURRENT_LEVEL <= levels.length) getGame(levels[CURRENT_LEVEL - 1]);
+      if (CURRENT_LEVEL < levels.length) getGame(levels[CURRENT_LEVEL]);
       return;
     }
     clearGame();
@@ -159,6 +160,14 @@ function getGame(l) {
 }
 
 document.querySelector(".playBut").addEventListener('click', removeHome);
+document.querySelector("#left").addEventListener('click', showHome);
+document.querySelector("#right").addEventListener('click', startGame);
+document.querySelector("#one").addEventListener('click', startFirstLevel);
+document.querySelector("#two").addEventListener('click', startSecondLevel);
+document.querySelector("#three").addEventListener('click', startThirdLevel);
+document.querySelector("#four").addEventListener('click', startFourthLevel);
+document.querySelector("#five").addEventListener('click', startFifthLevel);
+document.querySelector("#six").addEventListener('click', startSixthLevel);
 window.addEventListener('load', move);
 // window.onload = move;
 
@@ -167,12 +176,17 @@ function removeHome() {
   obj[0].style.display = "none";
   var obj = document.getElementsByClassName("bottom");
   obj[0].style.display = "flex";
-  getGame(levels[CURRENT_LEVEL]);
+  // getGame(levels[CURRENT_LEVEL]);
+  showLevelScreen();
 }
 
 function showHome() {
   var obj = document.getElementsByClassName("loading");
   obj[0].style.display = "none";
+  
+  var obj = document.getElementsByClassName("container-level");
+  obj[0].style.display = "none";
+
   var obj = document.getElementsByClassName("home-screen");
   obj[0].style.display = "flex";
 }
@@ -190,4 +204,72 @@ function move() {
     }
   }
   setTimeout(showHome, 2100);
+}
+
+function showLevelScreen(){
+  var obj = document.getElementsByClassName("bottom");
+  obj[0].style.display = "none";
+  var obj = document.getElementsByClassName("container-level");
+  obj[0].style.display = "flex";
+  // getGame(levels[CURRENT_LEVEL]);
+}
+
+function allNone(){
+  
+  var obj = document.getElementsByClassName("loading");
+  obj[0].style.display = "none";
+  
+  var obj = document.getElementsByClassName("container-level");
+  obj[0].style.display = "none";
+
+  var obj = document.getElementsByClassName("home-screen");
+  obj[0].style.display = "none";
+}
+
+function showGameCard(){
+  var obj = document.getElementsByClassName("bottom");
+  obj[0].style.display = "flex";
+}
+
+function startGame(){
+  allNone();
+  showGameCard();
+  getGame(levels[CURRENT_LEVEL]);
+}
+
+function startFirstLevel() {
+  CURRENT_LEVEL=0;
+  allNone();
+  showGameCard();
+  getGame(levels[CURRENT_LEVEL]);
+}
+function startSecondLevel() {
+  CURRENT_LEVEL=1;
+  allNone();
+  showGameCard();
+  getGame(levels[CURRENT_LEVEL]);
+}
+function startThirdLevel() {
+  CURRENT_LEVEL=2;
+  allNone();
+  showGameCard();
+  getGame(levels[CURRENT_LEVEL]);
+}
+function startFourthLevel() {
+  CURRENT_LEVEL=3;
+  allNone();
+  showGameCard();
+  getGame(levels[CURRENT_LEVEL]);
+}
+function startFifthLevel() {
+  CURRENT_LEVEL=4;
+  allNone();
+  showGameCard();
+  getGame(levels[CURRENT_LEVEL]);
+}
+function startSixthLevel() {
+  CURRENT_LEVEL=5;
+  allNone();
+  showGameCard();
+  getGame(levels[CURRENT_LEVEL]);
 }
