@@ -5,7 +5,7 @@ export default class Player {
     this.width = width;
     this.height = height;
     this.color = "green";
-    this.speed = 7;
+    // this.speed = 7;
     this.isLeft = false;
     this.isRight = false;
     this.life = 3;
@@ -29,11 +29,12 @@ export default class Player {
     ctx.closePath();
   }
   update(canvas) {
-    if (this.isLeft) {
-      this.x -= this.speed;
-    } else if (this.isRight) {
-      this.x += this.speed;
-    }
+    // if (this.isLeft) {
+    //   this.x -= this.speed;
+    // } else if (this.isRight) {
+    //   this.x += this.speed;
+    // }
+    // this.x = this.isPos;
 
     if (this.x < 0) {
       this.x = 0;

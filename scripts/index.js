@@ -55,6 +55,8 @@ function getGame(l) {
   const PADDING = 15;
   const BricksArr = [];
   let BRICKS_LEFT = 0;
+  let oldX;
+
   for (let i = 0; i < ROW; i = i + 1) {
     for (let j = 0; j < COL; j = j + 1) {
       const x = COL_WIDTH * j + PADDING / 2;
@@ -140,22 +142,32 @@ function getGame(l) {
     requestAnimationFrame(animateGame);
   })();
 
-  window.addEventListener("keydown", function (event) {
-    if (event.key === "ArrowRight") {
-      player.isRight = true;
-      player.isLeft = false;
-    } else if (event.key === "ArrowLeft") {
-      player.isRight = false;
-      player.isLeft = true;
-    }
+  // window.addEventListener("keydown", function (event) {
+  //   if (event.key === "ArrowRight") {
+  //     player.isRight = true;
+  //     player.isLeft = false;
+  //   } else if (event.key === "ArrowLeft") {
+  //     player.isRight = false;
+  //     player.isLeft = true;
+  //   }
+  // });
+
+  // window.addEventListener("keyup", function (event) {
+  //   if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+  //     player.isRight = false;
+  //     player.isLeft = false;
+  //   }
+  // });
+
+  $(window).mousemove(function (event) {
+    oldX = event.pageX;
+    setTimeout(() => checkMovement(event, oldX), 35);
+    oldX = event.pageX;
   });
 
-  window.addEventListener("keyup", function (event) {
-    if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
-      player.isRight = false;
-      player.isLeft = false;
-    }
-  });
+  const checkMovement = (event, oldX) => {
+    player.x += (oldX - event.pageX) / 3;
+  };
 }
 
 document.querySelector(".playBut").addEventListener('click', removeHome);
