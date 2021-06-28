@@ -4,7 +4,10 @@ export default class Brick {
     this.y = y;
     this.width = width;
     this.height = height;
-    this.color = "orange";
+    let r = Math.floor(Math.random() * 255) + 1;
+    let g = Math.floor(Math.random() * 255) + 1;
+    let b = Math.floor(Math.random() * 255) + 1;
+    this.color = `rgb(${r},${g},${b})`;
     this.isVisible = isVisible;
   }
   draw(ctx) {

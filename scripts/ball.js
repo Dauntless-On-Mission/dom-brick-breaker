@@ -1,10 +1,10 @@
 export default class Ball {
-  constructor(x, y, radius) {
+  constructor(x, y, radius , current_level ) {
     this.x = x;
     this.y = y;
     this.radius = radius;
     this.color = "red";
-    this.speed = 3;
+    this.speed = 2 + current_level;
     this.xVelocity = Math.random() >= 0.5 ? this.speed : -this.speed;
     this.yVelocity = Math.random() >= 0.5 ? this.speed : -this.speed;
   }

@@ -82,7 +82,7 @@ function getGame(l) {
   // console.log(player);
 
   /* BALL */
-  const ball = new Ball(canvas.width / 2, canvas.height / 2, 10);
+  const ball = new Ball(canvas.width / 2, canvas.height / 2, 10 , CURRENT_LEVEL);
   // console.log(ball);
   function isBallCollideWithBrick(ball, brick) {
     return (
