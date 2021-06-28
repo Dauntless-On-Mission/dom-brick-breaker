@@ -22,7 +22,11 @@ body {
   width: 600px;
   padding: 1rem;
   font-size: 2rem;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#canvas {
+  background-image: url("/assets/night.png");
 }
 
 .home-screen {
