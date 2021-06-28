@@ -33,9 +33,9 @@ body {
   height: 100vh;
   background: url("/assets/HomeBackground.gif") no-repeat;
   background-size: cover;
-  display: none;
-  /* display: flex; */
+  display: flex;
   justify-content: center;
+  display: none;
 }
 
 .loading {
@@ -60,8 +60,8 @@ body {
 
 #volume {
   position: relative;
-  margin-right: 79vh;
-  margin-top: 1vh;
+  margin-right: 78vh;
+  margin-top: 2vh;
 }
 
 .ball {
@@ -74,7 +74,7 @@ body {
   background: linear-gradient(rgb(255, 115, 115), rgb(84, 84, 247));
   border-radius: 50%;
   animation: ball1 4s infinite ease-in-out;
-  animation-delay: 1s;
+  /* animation-delay: 1s; */
 }
 
 @keyframes ball1 {
@@ -145,14 +145,11 @@ body {
   width: 100px;
   height: 100px;
   text-align: center;
-  margin-top: 6vh;
+  margin-top: 3vh;
   background-color: rgb(252, 115, 105);
   border-radius: 50%;
   /* transition: 1s; */
   transition-delay: 0.4s;
-}
-.container:hover {
-  box-shadow: 0 0 15px 5px rgb(255, 80, 68);
 }
 
 .circle {
