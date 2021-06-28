@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  width: 100%;
+  background-image: url(../assets/HomeBackground.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  width: 600px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.623);
+}
+
+#sound {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.levels {
+  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#one,
+#two,
+#three,
+#four,
+#five,
+#six,
+#left,
+#right,
+#sound {
+  height: 125px;
+  width: 125px;
+  padding: 15px;
+  display: flex;
+  cursor: pointer;
+}
+
+#sound {
+  height: 100px;
+  width: 100px;
+}
+
+.arrows {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+#lock {
+  position: relative;
+  height: 20px;
+  width: 20px;
+}
+
+.img-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.img-wrapper #lock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  height: 45px;
+  width: 45px;
+  z-index: 3;
+}
+
+.img-wrapper .wrapper-overlay {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: calc(100% - 30px);
+  height: calc(100% - 30px);
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.container img:hover {
+  transform: scale(1.05);
+}
