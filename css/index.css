@@ -46,6 +46,12 @@ body {
   background-color: rgba(255, 255, 255, 0.466);
 }
 
+#volume{
+  position: relative;
+  margin-right: 79vh;
+  margin-top: 1vh;
+}
+
 .ball{
   position: absolute;
   top: 62.7%;
@@ -53,26 +59,30 @@ body {
   transform: translate(-50%, -50%);
   height: 50px;
   width: 50px;
-  background: linear-gradient(rgb(255, 115, 115), rgb(84, 84, 247));
+  background: linear-gradient( rgb(255, 115, 115),rgb( 84, 84, 247));
   border-radius: 50%;
   animation: ball1 4s infinite ease-in-out;
-  animation-delay: 1s;
+  /* animation-delay: 1s; */
 }
 
 @keyframes ball1{
-  0%   { top: 45%;   left: 55%;   }
-  25%  { top: 62.7%; left: 50%;   }
-  50% { top: 45%;   left: 44%;   }     
-  75% { top: 62.7%;   left: 50%;   }     
-  100% { top: 45%;   left: 55%;   }     }
+  0%   { top: 45%;     left: 55%;   }
+  25%  { top: 62.7%;   left: 50%;   }
+  50%  { top: 45%;     left: 44%;   }     
+  75%  { top: 62.7%;   left: 50%;   }     
+  100% { top: 45%;     left: 55%;   }     }
 
 .board img{
-  margin-top: 3rem;
+  /* margin-top: -1rem; */
 }
 
 .board input{
-  height: 50px;
-  width: 400px;
+  position: absolute;
+  top: 73.3%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 45px;
+  width: 350px;
   border-bottom-left-radius: 50px;
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -82,20 +92,25 @@ body {
   outline: none;
   padding-left: 20px;
   font-size: 25px;
+  margin-top: -4.2vh;
+  animation: paddle 4s infinite ;
 }
+
+@keyframes paddle{
+  0%   { top: 73.3%;   left: 55%;   }
+  /* 25%  { top: 62.7%; left: 50%;   } */
+  50% { top: 73.3%;   left: 45%;   }     
+  /* 75% { top: 62.7%;   left: 50%;   }      */
+  100% { top: 73.3%;   left: 55%;   }     }
 
 .container {
   width: 100px;
   height: 100px;
   text-align: center;
-  margin-top: 2vh;
+  margin-top: 6vh;
   background-color: rgb(252, 115, 105);
   border-radius: 50%;
-  /* transition: 1s; */
   transition-delay: 0.4s;
-}
-.container:hover{
-  box-shadow: 0 0 15px 5px rgb(255, 80, 68);
 }
 
 .circle {
@@ -107,7 +122,6 @@ body {
 }
 
 .playBut {
-/*  border: 1px solid red;*/
   display: inline-block;
   transition: all 0.5s ease;
 }
@@ -116,7 +130,7 @@ body {
   transition: all 0.7s ease-in-out;
   stroke-dasharray: 240;
   stroke-dashoffset: 480;
-  stroke: #000;
+  stroke: rgb(255, 255, 255);
   transform: translateY(0) 
 }
 
