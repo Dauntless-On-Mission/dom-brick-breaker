@@ -4,7 +4,7 @@ export default class Brick {
     this.y = y;
     this.width = width;
     this.height = height;
-    let r = Math.floor(Math.random() * 255) + 1;
+    let r = Math.floor(Math.random() * (255 - 140 + 1) + 140);
     let g = Math.floor(Math.random() * 255) + 1;
     let b = Math.floor(Math.random() * 255) + 1;
     this.color = `rgb(${r},${g},${b})`;
